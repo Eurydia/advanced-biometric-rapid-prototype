@@ -51,6 +51,9 @@ export const Biometric: FC<BiometricProps> = (props) => {
           <Typography>voicSignature: n/a</Typography>
           <Typography>facialSignature: n/a</Typography>
           <Typography>deviceLocation: matching</Typography>
+          <Typography>
+            overall: {ready ? "none" : "failing"}
+          </Typography>
         </Stack>
       </CardContent>
     </Card>
