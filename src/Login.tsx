@@ -7,6 +7,7 @@ import {
   Card,
   CardHeader,
   CardContent,
+  Typography,
 } from "@mui/material";
 import { Visibility } from "@mui/icons-material";
 
@@ -31,6 +32,7 @@ export const Login: FC<LoginProps> = (props) => {
         titleTypographyProps={{ fontWeight: "bold" }}
       />
       <CardContent>
+        <img src="images/logo.png" alt="logo" width="75%"></img>
         <Stack spacing={2}>
           <TextField
             fullWidth
@@ -44,7 +46,7 @@ export const Login: FC<LoginProps> = (props) => {
             size="medium"
             label="Password"
             variant="filled"
-            helperText="helloJunction2023!"
+            helperText="password: helloJunction2023!"
             value={props.password}
             onChange={handleChange}
             InputProps={{
@@ -58,6 +60,9 @@ export const Login: FC<LoginProps> = (props) => {
           >
             Sign in
           </Button>
+          <Typography>
+            Enter the password, then click sign in.
+          </Typography>
         </Stack>
       </CardContent>
     </Card>

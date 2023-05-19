@@ -56,7 +56,7 @@ export const App: FC = () => {
         <Grid container sx={{ marginTop: 4 }}>
           <Grid item xs={4} />
           <Grid item xs={4}>
-            <Typography>Please enable camera</Typography>
+            <Typography>Please enable camera to proceed</Typography>
             <Webcam />
           </Grid>
           <Grid item xs={1} />
@@ -94,7 +94,8 @@ export const App: FC = () => {
           <Grid item xs={4} />
           <Grid item xs={4}>
             <Typography>
-              Please say the following sentence into the microphone:
+              Please say the following sentence into the microphone
+              before proceeding:
             </Typography>
             <Typography fontWeight="bold">
               The quick brown fox jumps over the lazy dog
