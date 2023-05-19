@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import {
+  Box,
   Typography,
   useTheme,
   Stack,
@@ -18,11 +19,16 @@ export const Biometric: FC<BiometricProps> = (props) => {
 
   const ready = props.password.length > 0;
 
-  let overall = "none";
-  if (ready && props.password.length > 5) {
-    overall = "failing";
-  }
+  let keyInteractionStyle = "slow";
+  const kintex = Math.floor(Math.random() * 10) % 3;
 
+  if (kintex === 0) {
+    keyInteractionStyle = "steady";
+  } else if (kintex === 1) {
+    keyInteractionStyle = "fast";
+  } else if (kintex === 2) {
+    keyInteractionStyle = "frantic";
+  }
   return (
     <Card
       elevation={8}
@@ -35,28 +41,37 @@ export const Biometric: FC<BiometricProps> = (props) => {
       <CardHeader title="readings" />
       <CardContent>
         <Stack spacing={1}>
-          <Typography>
-            inputCurr: {ready ? props.password : "none"}
-          </Typography>
-          <Typography>
-            keyTempo: {ready ? Math.random().toFixed(8) : 0}
-          </Typography>
-          <Typography>keyPressure: n/a</Typography>
-          <Typography>
-            keyRhythym: {ready ? (Math.random() * 13).toFixed(3) : 0}
-          </Typography>
-          <Typography>
-            cursorSpeed: {ready ? (Math.random() * 13).toFixed(2) : 0}
-          </Typography>
-          <Typography>
-            cursorAccel: {ready ? (Math.random() * 13).toFixed(2) : 0}
-          </Typography>
-          <Typography>cursorDir: n/a</Typography>
-          <Typography>touchGesture: n/a</Typography>
-          <Typography>voicSignature: n/a</Typography>
-          <Typography>facialSignature: n/a</Typography>
-          <Typography>deviceLocation: matching</Typography>
-          <Typography>overall: {overall}</Typography>
+          <Stack>
+            <Typography>typingDyanmics:</Typography>
+            <Box paddingLeft={2}>
+              <Typography>
+                keyStrokeTiming:{" "}
+                {ready ? (Math.random() * 13).toFixed(4) : 0}
+              </Typography>
+              <Typography>keyPressure: n/a</Typography>
+              <Typography>
+                keyRhythym:{" "}
+                {ready ? (Math.random() * 13).toFixed(3) : 0}
+              </Typography>
+              <Typography>
+                keyInteractionStyle:{" "}
+                {ready ? keyInteractionStyle : "none"}
+              </Typography>
+            </Box>
+          </Stack>
+          <Stack>
+            <Typography>screenInteraction:</Typography>
+            <Box paddingLeft={2}>
+              <Typography>touchGestures: n/a</Typography>
+              <Typography>touchSpeed: n/a</Typography>
+              <Typography>touchAcceleration: n/a</Typography>
+              <Typography>touchTapping: n/a</Typography>
+              <Typography>touchTrajectory: n/a</Typography>
+              <Typography>touchSwiping: n/a</Typography>
+              <Typography>touchPinching: n/a</Typography>
+              <Typography>touchScrolling: n/a</Typography>
+            </Box>
+          </Stack>
         </Stack>
       </CardContent>
     </Card>

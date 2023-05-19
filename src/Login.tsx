@@ -13,6 +13,8 @@ import { Visibility } from "@mui/icons-material";
 type LoginProps = {
   password: string;
   onChange: (next_password: string) => void;
+
+  onLogin: () => void;
 };
 
 export const Login: FC<LoginProps> = (props) => {
@@ -50,7 +52,7 @@ export const Login: FC<LoginProps> = (props) => {
             }}
           />
           <Button
-            disabled={props.password.length > 5}
+            onClick={props.onLogin}
             variant="contained"
             size="large"
           >
