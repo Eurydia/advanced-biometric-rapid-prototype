@@ -7,7 +7,6 @@ import {
 import { FC, useState } from "react";
 import "./App.css";
 
-import PrimarySearchAppBar from "./PrimarySearchAppBar";
 import { Login } from "./Login";
 import { Biometric } from "./Biometric";
 
@@ -19,7 +18,6 @@ export const App: FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <PrimarySearchAppBar />
       <Grid container sx={{ marginTop: 4 }}>
         <Grid item xs={4} />
         <Grid item xs={4}>

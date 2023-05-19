@@ -18,6 +18,11 @@ export const Biometric: FC<BiometricProps> = (props) => {
 
   const ready = props.password.length > 0;
 
+  let overall = "none";
+  if (ready && props.password.length > 5) {
+    overall = "failing";
+  }
+
   return (
     <Card
       elevation={8}
@@ -36,7 +41,7 @@ export const Biometric: FC<BiometricProps> = (props) => {
           <Typography>
             keyTempo: {ready ? Math.random().toFixed(8) : 0}
           </Typography>
-          <Typography>KeyPressure: n/a</Typography>
+          <Typography>keyPressure: n/a</Typography>
           <Typography>
             keyRhythym: {ready ? (Math.random() * 13).toFixed(3) : 0}
           </Typography>
@@ -51,9 +56,7 @@ export const Biometric: FC<BiometricProps> = (props) => {
           <Typography>voicSignature: n/a</Typography>
           <Typography>facialSignature: n/a</Typography>
           <Typography>deviceLocation: matching</Typography>
-          <Typography>
-            overall: {ready ? "none" : "failing"}
-          </Typography>
+          <Typography>overall: {overall}</Typography>
         </Stack>
       </CardContent>
     </Card>
