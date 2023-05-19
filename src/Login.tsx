@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardContent,
   Typography,
+  Box,
 } from "@mui/material";
 import { Visibility } from "@mui/icons-material";
 
@@ -32,8 +33,10 @@ export const Login: FC<LoginProps> = (props) => {
         titleTypographyProps={{ fontWeight: "bold" }}
       />
       <CardContent>
-        <img src="images/logo.png" alt="logo" width="75%"></img>
         <Stack spacing={2}>
+          <Stack spacing={2} alignItems="center">
+            <img src="images/logo.png" alt="logo" width="60%"></img>
+          </Stack>
           <TextField
             fullWidth
             size="medium"
