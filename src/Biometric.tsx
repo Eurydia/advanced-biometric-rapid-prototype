@@ -72,6 +72,23 @@ export const Biometric: FC<BiometricProps> = (props) => {
               <Typography>touchScrolling: n/a</Typography>
             </Box>
           </Stack>
+          <Stack>
+            <Typography>gestureInteration:</Typography>
+            <Box paddingLeft={2}>
+              <Typography>deviceMovementPattern: n/a</Typography>
+              <Typography>deviceOrientation: n/a</Typography>
+              <Typography>devicePhysicalInteration: n/a</Typography>
+            </Box>
+          </Stack>
+
+          <Stack>
+            <Typography>locationContext:</Typography>
+            <Box paddingLeft={2}>
+              <Typography>ipAddress: n/a</Typography>
+              <Typography>geoLocation: n/a</Typography>
+              <Typography>timezone: n/a</Typography>
+            </Box>
+          </Stack>
         </Stack>
       </CardContent>
     </Card>

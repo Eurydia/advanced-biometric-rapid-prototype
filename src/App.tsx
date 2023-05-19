@@ -1,4 +1,9 @@
 import {
+  Card,
+  CardContent,
+  CardHeader,
+  Stack,
+  Box,
   CssBaseline,
   ThemeProvider,
   createTheme,
@@ -54,8 +59,31 @@ export const App: FC = () => {
             <Typography>Please enable camera</Typography>
             <Webcam />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={1} />
+          <Grid item xs={3}>
             <Button onClick={() => setPage(2)}>Proceed</Button>
+            <Card
+              elevation={8}
+              sx={{
+                padding: 2,
+                backgroundColor: theme.palette.primary.dark,
+                color: theme.palette.common.white,
+              }}
+            >
+              <CardHeader title="readings" />
+              <CardContent>
+                <Stack>
+                  <Typography>facialSignature:</Typography>
+                  <Box paddingLeft={2}>
+                    <Typography>
+                      faciallCharacteristics: n/a
+                    </Typography>
+                    <Typography>facialExpressions: n/a</Typography>
+                    <Typography>facialMovements: n/a</Typography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </Card>
           </Grid>
         </Grid>
       ) : (
@@ -85,8 +113,30 @@ export const App: FC = () => {
               )}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={1} />
+          <Grid item xs={3}>
             <Button onClick={() => setPage(3)}>Proceed</Button>
+            <Card
+              elevation={8}
+              sx={{
+                padding: 2,
+                backgroundColor: theme.palette.primary.dark,
+                color: theme.palette.common.white,
+              }}
+            >
+              <CardHeader title="readings" />
+              <CardContent>
+                <Stack>
+                  <Typography>vocalSignature:</Typography>
+                  <Box paddingLeft={2}>
+                    <Typography>vocalCharacteristics: n/a</Typography>
+                    <Typography>vocalPitch: n/a</Typography>
+                    <Typography>annotationPattern: n/a</Typography>
+                    <Typography>speechPattern: n/a</Typography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </Card>
           </Grid>
         </Grid>
       ) : (
@@ -99,7 +149,37 @@ export const App: FC = () => {
             <Typography variant="h2">Sign in failed.</Typography>
           </Grid>
           <Grid item xs={1} />
-          <Grid item xs={3}></Grid>
+          <Grid item xs={3}>
+            <Card
+              elevation={8}
+              sx={{
+                padding: 2,
+                backgroundColor: theme.palette.primary.dark,
+                color: theme.palette.common.white,
+              }}
+            >
+              <CardHeader title="readings" />
+              <CardContent>
+                <Stack>
+                  <Typography>usageSignature:</Typography>
+                  <Box paddingLeft={2}>
+                    <Typography>scrollBehavior: n/a</Typography>
+                    <Typography>clickPattern: n/a</Typography>
+                  </Box>
+                </Stack>
+                <Stack>
+                  <Typography>hardwareUsageSignature:</Typography>
+                  <Box paddingLeft={2}>
+                    <Typography>buttonsInteractions: n/a</Typography>
+                    <Typography>touchpadInteractions: n/a</Typography>
+                    <Typography>
+                      fingerprintInteractions: n/a
+                    </Typography>
+                  </Box>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
         </Grid>
       ) : (
         <Fragment />
